@@ -14,3 +14,18 @@ export function logOut(){
     localStorage.removeItem("logged");
 }
 
+export function addUser(user){
+    let users = JSON.parse(localStorage.getItem("users"));
+
+    //controlla che l'user non esista gia'
+    //preservare immutabilità
+    if (!getUserObject(user)){
+        users.push({
+            mail: user, 
+            lastLogin: new Date(), 
+            logins: 1
+        });
+    }
+
+    localStorage.setItem("users", JSON.stringify(users));
+}
