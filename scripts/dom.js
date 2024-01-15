@@ -34,3 +34,16 @@ function showPage(){
     document.querySelector('button#logout')
     .addEventListener('click', showLogin);
 }
+
+window.onload = () => {
+    if (localStorage.getItem("users") === null){
+        localStorage.setItem("users", "[]");
+    };
+
+    if (localStorage.getItem('logged') === null){
+        showLogin();
+    } else {
+        showPage();
+    } 
+}
+
