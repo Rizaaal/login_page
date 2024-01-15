@@ -1,9 +1,16 @@
-const loginButton = document.querySelector('button#login');
+function showLogin(){
+    logOut();
+    document.body.innerHTML = 
+    `
+    <h1>Login</h1>
+    <p>inserisci mail:</p>
+    <input type="text" id="login" placeholder="type your email">
+    <button id="login">entra</button>
+    `;
 
-//templates
-const welcome = 
-`
-<h1>Welcome</h1>
+    document.querySelector('button#login')
+    .addEventListener('click', showPage);
+}
 <nav>
 <ul>
     <li><button id="back"><</button></li>
