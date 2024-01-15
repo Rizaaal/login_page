@@ -10,3 +10,7 @@ export function logUser(mail){
     console.log(loginCount);
 }
 
+export function logOut(){
+    localStorage.removeItem("logged");
+}
+
