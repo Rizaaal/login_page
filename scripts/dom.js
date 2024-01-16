@@ -32,7 +32,7 @@ const page = document.querySelector('main');
     //su pagina di benvenuto non esiste input.value
     //e logged === null solo su login page
     if (localStorage.getItem('logged') === null){
-        logUser(document.querySelector('input').value);
+        logUser(document.querySelector('input#login').value);
     };
 
     addUser(localStorage.getItem("logged"));
