@@ -12,11 +12,23 @@ const page = document.querySelector('main');
     <button id="login" disabled>entra</button>
     `;
 
-    document.querySelector('button#login')
-    .addEventListener('click', showPage);
+    const loginButton = document.querySelector('button#login');
+
+    loginButton.addEventListener('click', buildMainPage);
+
+    //validazione mail
+    document.querySelector('input#login')
+    .addEventListener('keyup', e => {
+        const pattern = /[\w\-\.]+@([\w-]+\.)+[\w-]+/;
+        if (pattern.test(e.target.value)){
+            loginButton.removeAttribute('disabled');
+        } else {
+            loginButton.setAttribute("disabled", "disabled");
+        }
+    });
+
 }
 
-function showPage(){
     //su pagina di benvenuto non esiste input.value
     //e logged === null solo su login page
     if (localStorage.getItem('logged') === null){
