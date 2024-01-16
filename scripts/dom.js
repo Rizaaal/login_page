@@ -1,5 +1,7 @@
 import { addUser, getUserObject, logOut, logUser } from "./localstorage.js";
 
+const page = document.querySelector('main');
+
     logOut();
     document.body.innerHTML = 
     `
