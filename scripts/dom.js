@@ -1,21 +1,5 @@
-import { addUser, logOut, logUser } from "./storage.js";
+import { addUser, getUserObject, logOut, logUser } from "./localstorage.js";
 
-//comportamento validazione mail: il bottone è disabilitato
-//se la mail non è valida
-
-//approccio per salvare gli accessi: lo stato di logged in e il conto degli
-//accessi li separiamo: se un utente è loggato, salviamo un valore "logged"
-//dentro il localStorage. Al contempo, salviamo in un array di utenti, tutti
-//tutti gli utenti che hanno fatto il login almeno una volta, ed il conteggio
-//di tutte volte che un utente si è loggato, oltre che la data dell'ultimo
-//login
-
-//usa .map per modificare gli array di localStorage
-
-//ogni controllo di utente all'interno della lista corrisponde all'utente
-//loggato.
-
-function showLogin(){
     logOut();
     document.body.innerHTML = 
     `
