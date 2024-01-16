@@ -40,10 +40,11 @@ const page = document.querySelector('main');
     const welcomeMessage = getUserObject(localStorage.getItem('logged'))
     .logins > 1 ? 'Welcome back' : 'Welcome'; 
 
-    document.body.innerHTML = 
+    page.innerHTML = 
     `
     <nav>
         <li><button id="logout">logout</button></li>
+        <li id="login-info"></li>
     </nav>
         
     <h1>Welcome, ${localStorage.getItem("logged")}</h1>
