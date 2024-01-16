@@ -36,8 +36,9 @@ const page = document.querySelector('main');
     };
 
     addUser(localStorage.getItem("logged"));
-    //const loggedUser = getUserObject("barbapapa");
-    //console.log(!loggedUser);
+
+    const welcomeMessage = getUserObject(localStorage.getItem('logged'))
+    .logins > 1 ? 'Welcome back' : 'Welcome'; 
 
     document.body.innerHTML = 
     `
