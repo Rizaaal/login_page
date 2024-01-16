@@ -3,12 +3,13 @@ import { addUser, getUserObject, logOut, logUser } from "./localstorage.js";
 const page = document.querySelector('main');
 
     logOut();
-    document.body.innerHTML = 
+
+    page.innerHTML = 
     `
     <h1>Login</h1>
-    <p>inserisci mail:</p>
-    <input type="text" id="login" placeholder="type your email">
-    <button id="login">entra</button>
+    <p>inserisci una mail valida:</p>
+    <input type="text" id="login" >
+    <button id="login" disabled>entra</button>
     `;
 
     document.querySelector('button#login')
