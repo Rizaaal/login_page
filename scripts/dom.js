@@ -50,6 +50,9 @@ const page = document.querySelector('main');
     <h1>Welcome, ${localStorage.getItem("logged")}</h1>
     `;
 
+    showLastLoginDate();
+    showLoginsCounter();
+
     document.querySelector('button#logout')
     .addEventListener('click', showLogin);
 }
