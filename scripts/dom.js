@@ -2,6 +2,7 @@ import { addUser, getUserObject, logOut, logUser } from "./localstorage.js";
 
 const page = document.querySelector('main');
 
+function buildLoginPage(){
     logOut();
 
     page.innerHTML = 
@@ -29,6 +30,7 @@ const page = document.querySelector('main');
 
 }
 
+function buildMainPage(){
     //su pagina di benvenuto non esiste input.value
     //e logged === null solo su login page
     if (localStorage.getItem('logged') === null){
@@ -54,6 +56,7 @@ const page = document.querySelector('main');
     showLoginsCounter();
 
     document.querySelector('button#logout')
+}
 
 function showLoginsCounter(){
     const user = getUserObject(localStorage.getItem("logged"));
@@ -85,9 +88,9 @@ window.onload = () => {
     };
 
     if (localStorage.getItem('logged') === null){
-        showLogin();
+        buildLoginPage();
     } else {
-        showPage();
+        buildMainPage();
     } 
 }
 
