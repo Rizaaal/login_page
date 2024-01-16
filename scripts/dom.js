@@ -54,7 +54,15 @@ const page = document.querySelector('main');
     showLoginsCounter();
 
     document.querySelector('button#logout')
-    .addEventListener('click', showLogin);
+
+function showLoginsCounter(){
+    const user = getUserObject(localStorage.getItem("logged"));
+    if (user.logins > 1){
+        const loginInfo = document.querySelector('#login-info');
+        loginInfo.innerHTML += `<div id="logins">${user.logins}</div>`;
+    }
+}
+
 }
 
 window.onload = () => {
