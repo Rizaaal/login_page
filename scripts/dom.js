@@ -49,13 +49,14 @@ function buildMainPage(){
         <li id="login-info"></li>
     </nav>
         
-    <h1>Welcome, ${localStorage.getItem("logged")}</h1>
+    <h1>${welcomeMessage}, ${localStorage.getItem("logged")}</h1>
     `;
 
     showLastLoginDate();
     showLoginsCounter();
 
     document.querySelector('button#logout')
+    .addEventListener('click', buildLoginPage);
 }
 
 function showLoginsCounter(){
