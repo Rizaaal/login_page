@@ -71,15 +71,15 @@ function showLastLoginDate(){
     const user = getUserObject(localStorage.getItem("logged"));
     if (user.logins > 1){
         const loginInfo = document.querySelector('#login-info');
-        const lastLogin = new Date(user.lastLogin);
+        const lastLogin = new Date(user.lastLogin).toLocaleString();
 
-        const formattedLoginDate = 
-        lastLogin.getFullYear() + '-' +
-        (lastLogin.getMonth() + 1) + '-' +
-        lastLogin.getDate();
+        // const formattedLoginDate = 
+        // lastLogin.getFullYear() + '-' +
+        // (lastLogin.getMonth() + 1) + '-' +
+        // lastLogin.getDate();
 
         loginInfo.innerHTML += 
-        `<div id="lastLogin">last login: ${formattedLoginDate}</div>`;
+        `<div id="lastLogin">last login: ${lastLogin}</div>`;
     }
 }
 
